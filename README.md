@@ -1,4 +1,4 @@
-# W3C Workshop：MIP
+# W3C 会员活动：MIP
 
 ## 概述
 
