@@ -1,48 +1,5 @@
-# W3C 会员活动：MIP
+# 移动网页加速
 
-## 概述
-
-近两年很多公司都在进行基于内容分发场景的下游页面加载体验优化，例如Google AMP和Facebook Instant Article以及国内的Baidu MIP（实现类似AMP）等。意在通过更快的加载速度和更有好的展现交互方式来提升用户在内容分发平台上的浏览体验。
-
-类似的技术特点是内容分发平台通过明确开发规范要求下游站点进行改造，并通过与自身平台技术结合提供页面浏览容器，以便页面能在平台上更流畅的展现和展现和浏览。
-
-对于内容提供站点/服务商，可能面临着需要对多个平台的不同技术标准/实现提供多个支持，这是非常不好的一点。百度作为国内最大的内容分发平台，期望能与国内其他内容分发平台公司一起明确基于Web技术的通用标准，为众多的Web开发者提供更良好的Web开发环境和体验。
-
-## 主要技术点
-本次议题主要是讨论目前基于Web提供的页面加速技术AMP/MIP的其中大部分技术的应用标准。
-
-可通过[AMP官网](https://www.ampproject.org/)和[MIP官网](https://www.mipengine.org/)了解技术细节。
-
-本次讨论主要Focus在如何让一个页面被内容分发平台即时展现渲染。需要做到上述描述效果，主要需要通过以下技术实现：
-
-* 在浏览器中预取/预渲染一个页面
-* 将预取/预渲染的页面异步展现在当前浏览器环境
-* 通过稳定、快速的CDN服务提供更快的页面网络环境
-
-我们将在workshop中重点讨论这三个技术的建议实现以及标准。
-
-### Pre-fetch/Pre-render page
-想要在用户浏览页面时能快速的呈现页面内容出来，需要能让页面HTML被提前预取，或者更彻底的优化是让整个页面被预渲染出来。当前W3C提供的标准`<link prefetch>` 标签在各个浏览器上的实现不太一致，对于各个内容分发平台来说，是一种不太可靠的预取方式。
-MIP/AMP的页面在分发平台上是通过CDN的Cache Page提供的，分发平台通过JS来控制页面的预取和预渲染（发送HTML请求进行预取，构建Iframe进行预渲染），主要的目的是为了能精确的控制页面是否需要预取/预渲染以及了解页面预取/预渲染的实时状态（分发平台可以通过自身的智能策略更精确的找到需要加速的页面）。
-
-#### 实现缺陷
-通过JS实现精细的预取控制并不是一种很合理的实现（JS Lib不应该是Web标准），也不可能做到方案在所有Web上的通用。
-
-#### 建议实现
-
->建议通过浏览器提供精细控制预取/预渲染行为的API
-
-此外，由于预取/预渲染是会对站点服务端造成真实访问的（MIP/AMP因为将页面缓存在CDN，所以对站点无此影响，但其他页面需要考虑），所以也需要一个请求策略标准明确出预取/预渲染请求，以便Web服务可以使用通用的判断标准过滤识别预取/预渲染流量。
-
-### Async open page
-分发平台为了保证用户浏览的连贯性，会对打开一个浏览的页面做打开交互动画上的处理。实现的方案是将一个完整页面使用Iframe异步的在当前页面（分发平台环境）打开，并且赋予一个特殊URL（https://m.baidu.com/mip/{websiteurl}）。
-
-#### 实现缺陷
-Iframe load page：由于是通过iframe实现的异步打开页面，所以在不同浏览器上，需要处理因为Iframe浏览页面带来的兼容性问题。
-Url not correct：由于使用JS加载Iframe并且调用pushstate添加history，用户在访问一个新的页面时看到的Url是一个继续保持在当前内容分发平台域的Url。各站点对此感到很困扰（影响Url展现，用户困惑）。
-
-#### 建议实现
-针对以上两个问题，建议能从浏览器层面实现以下功能：
-
-* 提供另一个页面被调起时的交互控制方法（Transition）
-* 在MIP/AMP机制下，明确MIP/AMP Url->Real Url的映射规则，并最终将Real Url呈现在地址栏（使用AMP/MIP Url加载页面，但呈现真实站点Url）
+* [Mobile web acceleration technical workshop summary](https://github.com/mipengine/mip-discuss/blob/master/w3c-members-technical-meeting.md)
+* [Web page prefetch extend submit](https://github.com/mipengine/mip-discuss/blob/master/web-prefetch-extend.md)
+* [Server cache webpage policy submit](https://github.com/mipengine/mip-discuss/blob/master/server-cache-webpage-policy.md)
