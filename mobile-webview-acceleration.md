@@ -1,6 +1,6 @@
 # Mobile webview acceleration
 
-## Absctract
+## Abstract
 无论是安卓还是iOS系统，在移动端的Native App上打开web页面、web应用均是通过创建webview的方式来进行的，webview的性能直接影响到web页面打开的性能，webview的易开发和易维护也直接影响到移动端开发和变更的效率。大量的实际应用中，可以发现移动端上的webview的性能存在诸多不足，一定程度上已经成为了Native App上影响用户web体验的关键因素之一，而且目前并没有全面、通用的解决方案。
 
 ## issues
