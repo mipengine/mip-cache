@@ -36,18 +36,18 @@ Consider how to provide the ability at the browser level, follows are the expcet
 
 Expand the link tag properties:
 
-    -   concurrent_num MAX concurrent page prefetch num
-    -   maxSize max prerender page size
+    - concurrent_num MAX concurrent page prefetch num
+    - maxSize max prerender page size
     
 ###  prefetch/prerender policy
 add browser prerender_level for tag attribute.
    
 such as ``<link prerender_level="1">``
 
-    *   level 1，only parse dom and preload page resource such as image,script,css
-    *   level 2，parse dom&css and render dom tree
-    *   level 3，excute specific markup script
-    *   level 4，excute all script 
+    * level 1，only parse dom and preload page resource such as image,script,css
+    * level 2，parse dom&css and render dom tree
+    * level 3，excute specific markup script
+    * level 4，excute all script 
 
 ### preftech/prerender feedback
 
