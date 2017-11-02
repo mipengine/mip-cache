@@ -4,20 +4,20 @@
 
 ## Abstract
 
-Mobile page visiting acceleration is an important factor of mobile web user expierence.Page rendering performance is important on page performance optimization, but in this document, will mainly introduce some thing out side of rendering per performance.Because web site rendering performance will be optimizated when them use some acceleration solution such as amp/mip,but if we want to make web page opening instantly when user was accessing search enginee's search result or opening content distribute platform's content,it also rely on a more accurate prefetch/prerender API.
+Mobile page visiting acceleration is an important factor of mobile web user expierence. Page rendering performance is important on page performance optimization, but in this document, will mainly introduce some thing out side of rendering per performance. Because web site rendering performance will be optimizated when them use some acceleration solution such as amp/mip, but if we want to make web page opening instantly when user was accessing search enginee's search result or opening content distribute platform's content, it also rely on a more accurate prefetch/prerender API.
 
 ## Browser prefetch/prerender issues
 
-In mobile web browser,when user click search result,some thing will be proceed as follows:
+In mobile web browser, when user click search result,some thing will be proceed as follows:
 
-DNS,Tcp connect,Send request,Server response,Net transmission,Page rendering,Resource loading.
+DNS, Tcp connect, Send request, Server response, Net transmission, Page rendering, Resource loading.
 
-For the mobile web users,every step will waste many time,after the actual test in Baidu search,the average website first screen time in Baidu search result was 3.5s.
+For the mobile web users, every step will waste many time, after the actual test in Baidu search, the average website first screen time in Baidu search result was 3.5s.
 
-Solutions such as amp/mip has been provided cdn cache system and some component for rendering,but for the papge load strategy and prefetch strategy,browsers also need to provide the ability to improve.Specific questions are as follows:
+Solutions such as amp/mip has been provided cdn cache system and some component for rendering,but for the papge load strategy and prefetch strategy, browsers also need to provide the ability to improve. Specific questions are as follows:
 
 ### Strategy of prefetch/prerender 
-on the one hand, page load strategy optimization mainly consider size of page,network conditions,priority and so on. This is a business-related strategy to consider, there is no need for browser API improvements.
+on the one hand, page load strategy optimization mainly consider size of page, network conditions, priority and so on. This is a business-related strategy to consider, there is no need for browser API improvements.
 
 on the other hand, when web page use resource hints to prefetch/prerender page, the browser needs to consider which pages are suitable for prefetching, and take on prefetch/prerender sign in http requrest so that server side can use it to do some strategy or count this behavior.
 
@@ -44,7 +44,7 @@ add browser prerender_level for tag attribute.
    
 such as ``<link prerender_level="1">``
 
-    * level 1，only parse dom and preload page resource such as image,script,css
+    * level 1，only parse dom and preload page resource such as image, script, css
     * level 2，parse dom&css and render dom tree
     * level 3，excute specific markup script
     * level 4，excute all script 
