@@ -22,7 +22,7 @@ This section mainly describe the problems mobile web sites will face when them p
 ### issues
 
 Following image is the process when user visit page var content distribute platform cache.
- ![各类缓存在用户一次请求中所处的位置](http://bos.nj.bpc.baidu.com/v1/agroup/0e5f75439b7b188d765ee7e6924f22484ea07d29)
+ ![各类缓存在用户一次请求中所处的位置](http://bos.nj.bpc.baidu.com/v1/agroup/ffccdda4058200fbb2b7aa59f17c2cc6bd737561)
 
 Browser acceleration service is a server proxy cache technology. On the modify page content strategy and the cache strategy, it is not visible to the developer. Including but not limited to:
 
@@ -34,10 +34,13 @@ Proxy cache service crawl page when user visit the page var content distribution
 
 * Add new field to describe web sites url patterni in robots.txt, used to define a page whether be cached.
 * robots.txt cahche expiration time can described by `Cache-Control`.
-* Use `Cache-Control` header to control cache expiration time, and use `stale-while-revalidate` header to update cache smoothly.
+* Use `Cache-Control` header to control cache expiration time, and use [stale-while-revalidate](https://tools.ietf.org/html/rfc5861) header to update cache smoothly.
+![stale-while-revalidate](http://bos.nj.bpc.baidu.com/v1/agroup/0521445b1415f7e3d0ba849c2fb3796df30e7854)  
 
-Proxy cache service crawl web sites, process as follows:
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/6f48af9e732a5dad78e1ee01a3ab0b3d6fba20f5)
+Proxy cache service crawl web sites, process as follows:  
+
+![图片](http://bos.nj.bpc.baidu.com/v1/agroup/783f2989ae849f447eb6686071d940707421ed9f)  
+
 
 ### use case
 
@@ -48,8 +51,8 @@ Cache:*
 HttpsCacheDisallow: /home/news/data/
 HttpCacheDisallow: /home/news/data/
 # For all cache, whether http or https page can not be cached in path `/home/news/data/`
-# If page cached by distribution platform web site want to set page update frequency, set Cache-Control: max-age=86400, stale-while-revalidate=172800
-# This shows that browser local cache effective inner 86400s, and when local cache expiration, server side return old cache page, proxy cache server will re-crawl page inner 172800s.
+# stale-while-revalidate addresses that by allowing a response to be used once it becomes stale, triggering a background refresh; 
+# For instance, if a page cached by distribution platform web site want to set page update frequency, set Cache-Control: max-age=86400, stale-while-revalidate=172800.The response is fresh for 86400 seconds, and for an additional 172800 seconds, the stale response can be used.
 ```
 
 ## Web site access info collection when page cached by proxy server
