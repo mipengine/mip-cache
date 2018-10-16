@@ -1,0 +1,18 @@
+[
+    {
+        "message": "标签 'a' 中的属性 'href' 的属性值 '#replay_tip' 无效",
+        "code": "06200301",
+        "line": 51,
+        "col": 21,
+        "offset": 63727,
+        "input": "                    <a target=\"_blank\" class=\"readnum\" href=\"#replay_tip\" ttname=\"wap_detail_from\">375140</a>"
+    },
+    {
+        "message": "标签 'a' 中的属性 'href' 的属性值 '#replay_tip' 无效",
+        "code": "06200301",
+        "line": 54,
+        "col": 21,
+        "offset": 63898,
+        "input": "                    <a target=\"_blank\" href=\"#replay_tip\" ttname=\"wap_detail_thread\" rel=\"nofollow\" >8</a>"
+    }
+]

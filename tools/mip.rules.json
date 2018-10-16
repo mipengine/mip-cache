@@ -1,0 +1,40 @@
+{
+    "template": {
+        "ignore": true
+    },
+    "a": {
+        "attrs": {
+            "href": {
+                "value": "/^(http|tel|mailto|\/\/)/i"
+            }
+        }
+    },
+    "link": {
+        "attrs": {
+            "href": {
+                "value": "/^(http|\/\/)/i"
+            }
+        }
+    },
+    "style": {
+        "attrs": {
+            "src": {
+                "value": "/^(http|\/\/)/i"
+            }
+        }
+    },
+    "mip-*": {
+        "attrs": {
+            "src": {
+                "value": "/^(http|\/\/)/i"
+            }
+        }
+    },
+    "mip-video": {
+        "attrs": {
+            "src": {
+                "poster": "/^(http|\/\/)/i"
+            }
+        }
+    }
+}
