@@ -1,0 +1,10 @@
+[
+    {
+        "message": "标签 'link' 中的属性 'href' 的属性值 '/r/s/m.uooyoo.com/css/mip/news.css' 无效",
+        "code": "06200301",
+        "line": 13,
+        "col": 1,
+        "offset": 974,
+        "input": "<link type=\"text/css\" rel=\"stylesheet\" href=\"/r/s/m.uooyoo.com/css/mip/news.css\"/>"
+    }
+]

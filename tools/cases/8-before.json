@@ -1,0 +1,34 @@
+[
+    {
+        "message": "标签 'link' 中的属性 'href' 的属性值 '' 无效",
+        "code": "06200301",
+        "line": 36,
+        "col": 3,
+        "offset": 1490,
+        "input": "  <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"\">"
+    },
+    {
+        "message": "标签 'link' 中的属性 'href' 的属性值 '' 无效",
+        "code": "06200301",
+        "line": 37,
+        "col": 3,
+        "offset": 1558,
+        "input": "  <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"\">"
+    },
+    {
+        "message": "标签 'link' 中的属性 'href' 的属性值 '' 无效",
+        "code": "06200301",
+        "line": 38,
+        "col": 3,
+        "offset": 1624,
+        "input": "  <link rel=\"apple-touch-icon-precomposed\" href=\"\">"
+    },
+    {
+        "message": "标签 'link' 中的属性 'href' 的属性值 '' 无效",
+        "code": "06200301",
+        "line": 39,
+        "col": 3,
+        "offset": 1676,
+        "input": "  <link rel=\"shortcut icon\" href=\"\">"
+    }
+]

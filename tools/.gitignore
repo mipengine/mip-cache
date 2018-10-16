@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+tmp/
+*.log
+*.swp
+.vimrc
+package-lock.json

@@ -1,0 +1,25 @@
+{
+  "name": "cache-validator",
+  "version": "1.0.0",
+  "description": "cache rewrite rules validator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mip-validator": "1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mipengine/mip-cache.git"
+  },
+  "keywords": [
+    "mip-cache"
+  ],
+  "author": "breezet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mipengine/mip-cache/issues"
+  },
+  "homepage": "https://github.com/mipengine/mip-cache#readme"
+}

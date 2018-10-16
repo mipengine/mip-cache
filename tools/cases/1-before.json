@@ -1,0 +1,18 @@
+[
+    {
+        "message": "标签 'a' 中的属性 'href' 的属性值 '/index.html' 无效",
+        "code": "06200301",
+        "line": 2356,
+        "col": 2,
+        "offset": 41648,
+        "input": "\t\t\t\t<a target=\"_blank\" href=\"http://m.cq.bendibao.com/jieri/laodongjie/\">五一活动专题</a><br />\r"
+    },
+    {
+        "message": "标签 'a' 中的属性 'href' 的属性值 './m.cq.bendibao.com/xiuxian/' 无效",
+        "code": "06200301",
+        "line": 2397,
+        "col": 29,
+        "offset": 44151,
+        "input": "\t\t\t\t\t<a target=\"_blank\" href=\"http://m.cq.bendibao.com/xiuxian/69285.shtm\">2017重庆五一适合情侣的活动</a>||||<a target=\"_blank\" href=\"http://m.cq.bendibao.com/tour/55022.shtm\">情趣酒店</a> <a target=\"_blank\" href=\"http://m.cq.bendibao.com/tour/65332.shtm\">私人影院</a> \r"
+    }
+]
